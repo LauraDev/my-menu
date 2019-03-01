@@ -1,5 +1,7 @@
 package com.ocr.anthony;
 
+import java.lang.reflect.Array;
+
 public class Order {
     /**
      * Display all available menus in the restaurant.
@@ -16,6 +18,11 @@ public class Order {
      * @param nbMenu The selected menu.
      */
     public void displaySelectedMenu(int nbMenu) {
-        System.out.println("Vous avez choisi le menu " + nbMenu);
+        String[] menus = {"poulet" ,"boeuf", "végétarien"};
+        if(nbMenu > 0 && nbMenu <= 3) {
+            System.out.println("Vous avez choisi comme menu : " + menus[nbMenu-1]);
+        } else {
+            System.out.println("Vous n'avez pas choisi de menu parmi les choix proposés");
+        }
     }
 }
